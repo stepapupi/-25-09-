@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лабораторная работа 5 — вариант 7</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Лабораторная работа 5 <span>Вариант 7</span></h1>
+
+    <section>
+      <h2>1. Цифра в последовательности</h2>
+      <p>Найдите k-ю цифру в последовательности 100101102…198199.</p>
+      <form id="digit-form">
+        <label for="position">Позиция k от 1 до 300</label>
+        <input id="position" type="number" min="1" max="300" step="1" value="5" required>
+        <button type="submit">Найти цифру</button>
+        <output for="position"></output>
+      </form>
+    </section>
+
+    <section>
+      <h2>2. Обработка массива</h2>
+      <p>А. Посчитать сумму от первого элемента с положительным косинусом до конца массива. Углы заданы в радианах.</p>
+      <p>Б. Удалить элементы, у которых цифры модуля целой части образуют возрастающую арифметическую прогрессию.</p>
+      <form id="array-form">
+        <label for="numbers">Числа через пробел или точку с запятой</label>
+        <input id="numbers" type="text" value="2 3 0,5 -123,7 135 321" required>
+        <button type="submit">Обработать массив</button>
+        <output for="numbers"></output>
+      </form>
+    </section>
+
+    <section>
+      <h2>4. Цепочка слов</h2>
+      <p>Проверьте, начинается ли каждое следующее слово с последней буквы предыдущего.</p>
+      <form id="words-form">
+        <label for="words">Слова через пробел</label>
+        <input id="words" type="text" value="Арбуз зебра аист" required>
+        <button type="submit">Проверить цепочку</button>
+        <output for="words"></output>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
