@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #eef3ef;
+  color: #22352d;
+  font:
+    1rem/1.5 system-ui,
+    sans-serif;
+}
+
+main {
+  width: min(92%, 52rem);
+  margin: 2rem auto;
+}
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+section {
+  margin-bottom: 1rem;
+  padding: clamp(0.75rem, 4vw, 1.5rem);
+  border: 1px solid #d6e2d9;
+  border-radius: 0.9rem;
+  background: #fff;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+.multiplication {
+  min-width: 31rem;
+}
+.calendar {
+  table-layout: fixed;
+}
+caption {
+  padding: 0.6rem;
+  font-weight: 700;
+}
+th,
+td {
+  border: 1px solid #d9e1da;
+  padding: 0.45rem 0.3rem;
+}
+th {
+  background: #eaf1eb;
+}
+td {
+  height: 2.45rem;
+}
+.weekend {
+  background: #dcecf9;
+  color: #214363;
+}
+.holiday {
+  background: #ffdfda;
+  color: #7e2921;
+  font-weight: 700;
+}
+
+.legend,
+.calendar-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.legend {
+  margin-top: 0.8rem;
+}
+.legend span {
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.87rem;
+}
+.calendar-form input {
+  width: 6rem;
+}
+.registration-form {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 30rem;
+}
+.field {
+  display: grid;
+  gap: 0.3rem;
+}
+label {
+  font-weight: 600;
+}
+
+input,
+select,
+button {
+  min-height: 2.5rem;
+  min-width: 0;
+  border: 1px solid #9aada0;
+  border-radius: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  justify-self: start;
+  border-color: #25543e;
+  background: #25543e;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover {
+  background: #18412e;
+}
+[aria-invalid="true"] {
+  border-color: #9c352d;
+}
+.error {
+  margin: 0;
+  color: #8a2c26;
+  font-size: 0.9rem;
+}
+.success {
+  padding: 0.6rem;
+  background: #e2f2e7;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
