@@ -1,0 +1,335 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #19332e;
+  background: #eef4ef;
+  font:
+    1rem/1.5 system-ui,
+    sans-serif;
+}
+
+main {
+  width: min(92%, 48rem);
+  margin: 2.5rem auto;
+}
+
+h1 {
+  font-size: clamp(1.65rem, 5vw, 2.5rem);
+}
+h1 span {
+  display: block;
+  font-size: 1rem;
+  color: #47685e;
+}
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+section {
+  margin-bottom: 1rem;
+  padding: clamp(0.8rem, 3vw, 1.5rem);
+  background: white;
+  border: 1px solid #d4e3d9;
+  border-radius: 1rem;
+}
+
+.landscape,
+.vessel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.7rem;
+  container-type: inline-size;
+}
+
+.landscape {
+  min-height: 13rem;
+  display: grid;
+  place-items: end center;
+  padding-bottom: 1.7rem;
+  background: linear-gradient(#c9e8f4 72%, #b5d296 72%);
+}
+
+.landscape::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 1.05rem;
+  height: 0.65rem;
+  border-top: 0.24rem solid #3e4948;
+  background: repeating-linear-gradient(
+    90deg,
+    #6e5141 0 0.7rem,
+    transparent 0.7rem 1.4rem
+  );
+}
+
+.train {
+  font-size: min(4cqw, 1.55rem);
+  position: relative;
+  width: 16em;
+  height: 8em;
+}
+
+.train > div {
+  position: absolute;
+}
+
+.cab {
+  right: 0.75em;
+  bottom: 2em;
+  width: 5em;
+  height: 5em;
+  background: #a93238;
+  border: 0.2em solid #253b36;
+  border-top: 0.5em solid #253b36;
+  border-radius: 0.55em 0.55em 0 0;
+}
+
+.cab::before {
+  content: "";
+  position: absolute;
+  inset: 0.55em 0.85em auto;
+  height: 1.65em;
+  background: #c9e8f4;
+  border: 0.18em solid #253b36;
+  border-radius: 0.25em;
+}
+
+.boiler {
+  left: 1em;
+  bottom: 1.85em;
+  width: 10em;
+  height: 3.15em;
+  border: 0.2em solid #253b36;
+  border-radius: 1.5em 0.4em 0.4em 1.5em;
+  background: repeating-linear-gradient(
+    90deg,
+    #377c63 0 2.7em,
+    #225543 2.7em 3em
+  );
+}
+
+.chimney {
+  left: 2.15em;
+  bottom: 4.6em;
+  width: 1.35em;
+  height: 2em;
+  border-radius: 0.16em;
+  border-top: 0.45em solid #253b36;
+  background: #445652;
+}
+
+.smoke {
+  left: 0.5em;
+  bottom: 6.65em;
+  width: 0.9em;
+  height: 0.55em;
+  border-radius: 50%;
+  background: #819791;
+  box-shadow:
+    1.05em 0.35em 0 -0.05em #819791,
+    -0.95em -0.45em 0 0.12em #819791;
+}
+
+.lamp {
+  left: 0.72em;
+  bottom: 3.1em;
+  width: 0.7em;
+  height: 0.8em;
+  border: 0.13em solid #253b36;
+  border-radius: 0.25em;
+  background: #ffd580;
+}
+
+.chassis {
+  inset: auto 0.4em 1.35em 0.35em;
+  height: 0.75em;
+  border-radius: 0.23em;
+  background: #253b36;
+}
+
+.wheel {
+  bottom: 0;
+  width: 2.6em;
+  aspect-ratio: 1;
+  border: 0.22em solid #253b36;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #efd5a7 0 13%, transparent 15%),
+    repeating-conic-gradient(#b94146 0 12deg, #362d30 12deg 60deg);
+}
+
+.wheel-small {
+  left: 1.6em;
+}
+.wheel-middle {
+  left: 5.7em;
+}
+.wheel-large {
+  left: 10.35em;
+  width: 3.35em;
+}
+
+.rod {
+  left: 7em;
+  bottom: 1.11em;
+  width: 5em;
+  height: 0.35em;
+  border-radius: 0.2em;
+  background: #efd5a7;
+  transform: rotate(-4deg);
+}
+
+.equation {
+  margin: 0 0 0.6rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.reaction label {
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 0.55rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.reaction label:hover,
+#pause:checked + label {
+  background: #dceee5;
+}
+
+.vessel {
+  height: 13rem;
+  background: #eaf4f7;
+}
+
+.molecule {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  font-size: min(4cqw, 1rem);
+  animation: reactants 8s ease-in-out infinite;
+}
+
+.molecule span {
+  display: grid;
+  width: 1.9em;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: #245c88;
+  color: white;
+  font-weight: 700;
+}
+
+.molecule .oxygen {
+  width: 2.5em;
+  background: #a93238;
+}
+.molecule span + span {
+  margin-left: -0.2em;
+}
+
+.oxygen-pair {
+  top: 42%;
+  left: 14%;
+  --dx: 24cqw;
+  --dy: 0px;
+}
+.hydrogen-top {
+  top: 18%;
+  left: 69%;
+  --dx: -20cqw;
+  --dy: 2rem;
+}
+.hydrogen-bottom {
+  top: 67%;
+  left: 69%;
+  --dx: -20cqw;
+  --dy: -2rem;
+}
+
+.water {
+  width: 4.5em;
+  height: 3.6em;
+  top: 36%;
+  left: 46%;
+  justify-content: center;
+  align-items: start;
+  animation-name: products;
+}
+
+.water-top {
+  --dx: -16cqw;
+  --dy: -2.7rem;
+}
+.water-bottom {
+  --dx: 15cqw;
+  --dy: 2.4rem;
+}
+.water span + span {
+  position: absolute;
+  top: 1.4em;
+  margin: 0;
+}
+.water span:nth-child(2) {
+  left: 0.2em;
+}
+.water span:nth-child(3) {
+  right: 0.2em;
+}
+
+#pause:checked ~ .vessel .molecule {
+  animation-play-state: paused;
+}
+
+@keyframes reactants {
+  0%,
+  23% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  48% {
+    opacity: 1;
+    transform: translate(var(--dx), var(--dy));
+  }
+  52%,
+  95% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy));
+  }
+  96% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes products {
+  0%,
+  48% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.8);
+  }
+  54% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.8);
+  }
+  72%,
+  94% {
+    opacity: 1;
+    transform: translate(var(--dx), var(--dy));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy));
+  }
+}
