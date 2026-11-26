@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Калькулятор — лабораторная работа 7</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="calculator">
+      <h1>Калькулятор</h1>
+      <div class="screen">
+        <div id="expression" aria-hidden="true"></div>
+        <output id="display" aria-label="Показание калькулятора">0</output>
+      </div>
+      <div id="keys" class="keys">
+        <button
+          type="button"
+          class="clear"
+          data-key="clear"
+          aria-label="Сбросить всё"
+        >
+          C
+        </button>
+        <button
+          type="button"
+          data-key="entry"
+          aria-label="Очистить текущий ввод"
+        >
+          CE
+        </button>
+        <button
+          type="button"
+          data-key="back"
+          aria-label="Удалить последний символ"
+        >
+          ←
+        </button>
+        <button type="button" data-key="divide" aria-label="Разделить">
+          ÷
+        </button>
+
+        <button type="button" data-key="inverse" aria-label="Обратное число">
+          1/x
+        </button>
+        <button type="button" data-key="root" aria-label="Квадратный корень">
+          √
+        </button>
+        <button type="button" data-key="percent" aria-label="Процент">%</button>
+        <button type="button" data-key="multiply" aria-label="Умножить">
+          ×
+        </button>
+
+        <button type="button" class="digit" data-key="7">7</button>
+        <button type="button" class="digit" data-key="8">8</button>
+        <button type="button" class="digit" data-key="9">9</button>
+        <button type="button" data-key="subtract" aria-label="Вычесть">
+          −
+        </button>
+
+        <button type="button" class="digit" data-key="4">4</button>
+        <button type="button" class="digit" data-key="5">5</button>
+        <button type="button" class="digit" data-key="6">6</button>
+        <button type="button" class="add" data-key="add" aria-label="Сложить">
+          +
+        </button>
+
+        <button type="button" class="digit" data-key="1">1</button>
+        <button type="button" class="digit" data-key="2">2</button>
+        <button type="button" class="digit" data-key="3">3</button>
+
+        <button type="button" class="digit" data-key="0">0</button>
+        <button
+          type="button"
+          class="digit"
+          data-key="decimal"
+          aria-label="Десятичная запятая"
+        >
+          ,
+        </button>
+        <button type="button" data-key="sign" aria-label="Изменить знак">
+          ±
+        </button>
+        <button
+          type="button"
+          class="equals"
+          data-key="equals"
+          aria-label="Равно"
+        >
+          =
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
